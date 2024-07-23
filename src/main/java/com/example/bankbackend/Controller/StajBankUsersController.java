@@ -78,7 +78,20 @@ public class StajBankUsersController {
         return users;
     }
 
-    @DeleteMapping(/"deleteUser")
+    @DeleteMapping("/deleteUser")
+    public String deleteUser(@RequestParam String musteriHesapno, @RequestParam long musteriTCNo) {
+        List<StajBankUsers> allUsers = stajBankUsersRepository.findAll();
+
+        for (StajBankUsers user : allUsers) {
+            if(user.getMusteriHesapno().equals(Long.valueOf(musteriHesapno))) {
+                if (user.getMusteriTCNo() == musteriTCNo) {
+                    stajBankUsersRepository.deleteById(user.getMusteriHesapno());
+                }
+            }
+            System.out.println("User: " + user);
+        }
 
 
+        return "Kullanıcıyı bankadan sildim";
+    }
 }

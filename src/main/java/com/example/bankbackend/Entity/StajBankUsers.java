@@ -5,10 +5,9 @@ import jakarta.persistence.*;
 @Entity
 @Table(name="STAJBANK")
 public class StajBankUsers {
-
     @Id
     @Column(name="MUSTERIHESAPNO")
-    private String musteriHesapno;
+    private Long musteriHesapno;
 
     @Column(name="MUSTERINAME")
     private String musteriName;
@@ -25,16 +24,24 @@ public class StajBankUsers {
     @Column(name="MUSTERITCNO")
     private long musteriTCNo;
 
-    public StajBankUsers() {}
+    public StajBankUsers(Long musteriHesapno, String musteriName, String musteriSurname, int musteriBakiye, int musteriAge, long musteriTCNo) {
+        this.musteriHesapno = musteriHesapno;
+        this.musteriName = musteriName;
+        this.musteriSurname = musteriSurname;
+        this.musteriBakiye = musteriBakiye;
+        this.musteriAge = musteriAge;
+        this.musteriTCNo = musteriTCNo;
+    }
 
-    public StajBankUsers(String musteriHesapno, String musteriName,String musteriSurname,int musteriBakiye,int musteriAge,long musteriTCNo) {}
+    public StajBankUsers() {
 
+    }
 
-    public String getMusteriHesapno() {
+    public Long getMusteriHesapno() {
         return musteriHesapno;
     }
 
-    public void setMusteriHesapno(String musteriHesapno) {
+    public void setMusteriHesapno(Long musteriHesapno) {
         this.musteriHesapno = musteriHesapno;
     }
 
@@ -76,5 +83,9 @@ public class StajBankUsers {
 
     public void setMusteriTCNo(long musteriTCNo) {
         this.musteriTCNo = musteriTCNo;
+    }
+
+    public StajBankUsers(Long musteriHesapno) {
+        this.musteriHesapno = musteriHesapno;
     }
 }
