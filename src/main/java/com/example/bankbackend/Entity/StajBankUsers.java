@@ -1,6 +1,5 @@
 package com.example.bankbackend.Entity;
 
-
 import jakarta.persistence.*;
 
 @Entity
@@ -8,14 +7,14 @@ import jakarta.persistence.*;
 public class StajBankUsers {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long id;
+    @Column(name="MUSTERIHESAPNO")
+    private String musteriHesapno;
 
-    @Column(name="MUSTERİNAME")
+    @Column(name="MUSTERINAME")
     private String musteriName;
 
-    @Column(name="MUSTERIUSERNAME")
-    private String musteriUsername;
+    @Column(name="MUSTERISURNAME")
+    private String musteriSurname;
 
     @Column(name="MUSTERIBAKIYE")
     private int musteriBakiye;
@@ -24,40 +23,58 @@ public class StajBankUsers {
     private int musteriAge;
 
     @Column(name="MUSTERITCNO")
-    private int musteriTCNo;
+    private long musteriTCNo;
 
-    @Column(name="MUSTERIHESAPNO")
-    private String musteriHesapno;
+    public StajBankUsers() {}
 
-    public String getMusteriName() {return musteriName;}
+    public StajBankUsers(String musteriHesapno, String musteriName,String musteriSurname,int musteriBakiye,int musteriAge,long musteriTCNo) {}
 
-    public void setMusteriName(String musteriName) {this.musteriName = musteriName;}
 
-    public String getMusteriUsername() {return musteriUsername;}
-
-    public void setMusteriUsername(String musteriUsername) {this.musteriUsername = musteriUsername;}
-
-    public int getMusteriBakiye() {return musteriBakiye;}
-
-    public void setMusteriBakiye(int musteriBakiye) {this.musteriBakiye = musteriBakiye;}
-
-    public int getMusteriAge() {return musteriAge;}
-
-    public void setMusteriAge(int musteriAge) {this.musteriAge = musteriAge;}
-
-    public int getMusteriTCNo() {return musteriTCNo;}
-
-    public void setMusteriTCNo(int musteriTCNo) {this.musteriTCNo = musteriTCNo;}
-
-    public String getMusteriHesapno() {return musteriHesapno;}
-
-    public void setMusteriHesapno(String musteriHesapno) {this.musteriHesapno = musteriHesapno;}
-
-    public void setId(Long id) {
-        this.id = id;
+    public String getMusteriHesapno() {
+        return musteriHesapno;
     }
 
-    public Long getId() {
-        return id;
+    public void setMusteriHesapno(String musteriHesapno) {
+        this.musteriHesapno = musteriHesapno;
+    }
+
+    public String getMusteriName() {
+        return musteriName;
+    }
+
+    public void setMusteriName(String musteriName) {
+        this.musteriName = musteriName;
+    }
+
+    public String getMusteriSurname() {
+        return musteriSurname;
+    }
+
+    public void setMusteriSurname(String musteriSurname) {
+        this.musteriSurname = musteriSurname;
+    }
+
+    public int getMusteriBakiye() {
+        return musteriBakiye;
+    }
+
+    public void setMusteriBakiye(int musteriBakiye) {
+        this.musteriBakiye = musteriBakiye;
+    }
+
+    public int getMusteriAge() {
+        return musteriAge;
+    }
+
+    public void setMusteriAge(int musteriAge) {
+        this.musteriAge = musteriAge;
+    }
+
+    public long getMusteriTCNo() {
+        return musteriTCNo;
+    }
+
+    public void setMusteriTCNo(long musteriTCNo) {
+        this.musteriTCNo = musteriTCNo;
     }
 }
