@@ -3,7 +3,7 @@ package com.example.bankbackend.Entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="STAJBANK")
+@Table(name="STAJBANKNEW")
 public class StajBankUsers {
     @Id
     @Column(name="MUSTERIHESAPNO")
@@ -23,6 +23,7 @@ public class StajBankUsers {
 
     @Column(name="MUSTERITCNO")
     private long musteriTCNo;
+
 
     public StajBankUsers(Long musteriHesapno, String musteriName, String musteriSurname, int musteriBakiye, int musteriAge, long musteriTCNo) {
         this.musteriHesapno = musteriHesapno;
